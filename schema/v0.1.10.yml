@@ -1,0 +1,31 @@
+Client:
+  columns:
+    uid: 
+      type: uuid
+      unique: true
+      default: uuidv4
+    secret: 
+      type: uuid
+      default: uuidv4
+    name: string
+    grants: string
+
+Token:
+  columns:
+    type:
+      type: enum
+      values:
+        - access
+        - refresh
+    token: 
+      type: string
+      length: 2048
+    expireAt: date
+    scope: string
+
+Certificate:
+  columns:
+    private: text
+    public: text
+    cert: text
+    expireAt: date
